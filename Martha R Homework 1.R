@@ -97,10 +97,10 @@ freq_town
 # (B) What is the mean/average tree trunk size in the most frequent town?
 # Create a new subset called trunk_avg, and delete rows where the trunk size is NA.
 trunk_avg <- trees[trees$Town == freq_town, ]
-trunk_avg <- trunk_avg[!is.na(trunk_avg$Actual_Trunk_cm), ]
+# trunk_avg <- trunk_avg[!is.na(trunk_avg$Actual_Trunk_cm), ]
 
 # Calculate the average trunk size in the most frequent town with the mean() function.
-mean(trunk_avg$Actual_Trunk_cm)
+mean(trunk_avg$Actual_Trunk_cm, na.rm=T)
 
 View(trunk_avg)
 
